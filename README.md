@@ -8,7 +8,7 @@ It integrates multiple architectures including **Transformer**, **VAE**, and **C
 ## 🖼️ System Overview
 
 <p align="center">
-  <img src="figs/system_overview.png" alt="System Overview of SurgicalCamSwitch" width="700"/>
+  <img src="figs/NetArch.png" alt="System Overview of SurgicalCamSwitch" width="700"/>
 </p>
 
 **Figure 1.** Overall architecture of the *SurgicalCamSwitch* framework.  
