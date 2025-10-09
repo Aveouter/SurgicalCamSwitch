@@ -1,0 +1,398 @@
+#export CUDA_VISIBLE_DEVICES=0
+
+model_name=TimeMixer
+
+seq_len=20
+e_layers=3
+down_sampling_layers=3
+down_sampling_window=2
+learning_rate=0.001
+d_model=16
+d_ff=32
+batch_size=8
+train_epochs=20
+patience=10
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220722.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera 
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20221110.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220729.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220801.csv\
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20230315.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220722.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220722.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera 
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20221110.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220729.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220801.csv\
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20230315.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/camera \
+  --data_path data_20220722.csv \
+  --model_id camera_$seq_len'_'5 \
+  --model $model_name \
+  --data Camera2\
+  --features MS \
+  --seq_len $seq_len \
+  --label_len 10 \
+  --pred_len 5 \
+  --e_layers $e_layers \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 829 \
+  --dec_in 829 \
+  --c_out 829 \
+  --des 'Exp' \
+  --itr 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --train_epochs $train_epochs \
+  --patience $patience \
+  --down_sampling_layers $down_sampling_layers \ 
+  --down_sampling_method avg \
+  --down_sampling_window $down_sampling_window\
+  --target label  \
+  --camera
