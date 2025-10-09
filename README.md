@@ -1,11 +1,32 @@
 # SurgicalCamSwitch
 
-**SurgicalCamSwitch** 是一个基于深度学习的视频分析与时间序列预测系统，旨在解决开放式外科手术场景中的最佳摄像头镜头智能选择问题。  
-系统融合了多种 Transformer、VAE、CNN 与时序预测模型，支持多任务训练、异常检测与可视化分析。
+**SurgicalCamSwitch** is a deep learning–based video analysis and time-series prediction framework designed for **optimal surgical camera selection** in open surgery environments.  
+It integrates multiple architectures including **Transformer**, **VAE**, and **CNN** models to perform **multi-task learning**, **anomaly detection**, and **visual analytics** of multi-view surgical videos.
 
 ---
 
-## 🚀 项目结构
+## 🖼️ System Overview
+
+<p align="center">
+  <img src="figs/system_overview.png" alt="System Overview of SurgicalCamSwitch" width="700"/>
+</p>
+
+**Figure 1.** Overall architecture of the *SurgicalCamSwitch* framework.  
+The system captures synchronized multi-view surgical videos, extracts visual and temporal features, and predicts the optimal viewpoint through a transformer-based temporal modeling network.
+
+---
+
+## 🚀 Features
+
+- **Multi-Model Integration:** Supports 30+ deep time-series architectures (Autoformer, TimesNet, Informer, iTransformer, etc.).  
+- **Multi-Task Learning:** Handles long-term forecasting, anomaly detection, imputation, and classification tasks.  
+- **VAE Representation Learning:** Enables latent-space modeling for surgical scene feature reconstruction.  
+- **Automated Experiment Scripts:** Each model provides individual `.sh` scripts for reproducible experiments.  
+- **Open Surgery Optimization:** Learns to predict the best surgical camera viewpoint under dynamic operating conditions.
+
+---
+
+## 🚀 item menu
 
 ```
 SurgicalCamSwitch/
@@ -67,17 +88,7 @@ SurgicalCamSwitch/
 
 ---
 
-## 🧠 功能简介
-
-- **多模型融合**：支持 Autoformer、TimesNet、Informer、iTransformer 等 30+ 模型；
-- **多任务学习**：涵盖长短期预测、异常检测、补全、分类等任务；
-- **开放手术镜头选择**：支持多摄像头视频序列的最优视角预测；
-- **VAE 潜空间建模**：实现基于变分自编码器的特征学习；
-- **实验脚本化管理**：每个模型都配备独立 `.sh` 训练脚本，支持批量运行。
-
----
-
-## 🛠️ 环境配置
+## 🛠️ environment configs
 
 ```bash
 # 创建环境
@@ -92,7 +103,7 @@ pip install git-filter-repo
 
 ---
 
-## 📚 引用
+## 📚 cite
 
 coming soon
 
