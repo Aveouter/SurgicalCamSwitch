@@ -92,66 +92,9 @@ pip install git-filter-repo
 
 ---
 
-## ⚙️ 数据与大文件管理
-
-为避免 GitHub 大文件限制（>100MB）：
-
-1. 历史已通过 `git filter-repo` 清理：
-   ```bash
-   git filter-repo --force --invert-paths --path-glob "Exp_saito_vae/*.csv"
-   git filter-repo --force --strip-blobs-bigger-than 100M
-   ```
-2. `.gitignore` 已配置忽略：
-   ```
-   Exp_saito_vae/*.csv
-   ```
-3. 大型数据文件应存储于：
-   - GitHub Release 附件；
-   - 或 Git LFS。
-
----
-
-## 📊 提交与推送流程
-
-```bash
-# 添加修改
-git add .
-
-# 提交更新
-git commit -m "fix: unify line endings and update scripts"
-
-# 推送到远端
-git push
-
-# 若进行了历史重写，请使用强推
-git push -u origin main --force
-```
-
----
-
-## ⚡ 历史清理与版本记录
-
-2025 年 10 月，项目完成历史重构以删除大型 CSV 文件，主要 commit 流程如下：
-```
-698be73  →  1287b75  →  ef0cd03  →  3baa127
-```
-- 使用 `git filter-repo` 清理历史；
-- 重新添加远端；
-- 强制推送；
-- 修复行尾格式与脚本文件。
-
----
-
 ## 📚 引用
 
-> Liu X., et al. *An Optimal Surgical Camera Selection Framework Based on Multi-View Temporal Modeling.*  
-> Chongqing Institute of Green and Intelligent Technology, Chinese Academy of Sciences, 2025.
+coming soon
 
 ---
 
-## 📫 联系方式
-
-- **Author:** Xinyu Liu  
-- **Affiliation:** Chongqing Institute of Green and Intelligent Technology, CAS  
-- **GitHub:** [Aveouter](https://github.com/Aveouter)  
-- **Email:** liuxinyu@cigit.ac.cn
