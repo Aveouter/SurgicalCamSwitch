@@ -11,6 +11,39 @@ It gives me great pleasure to inform you that our manuscript “SurgicalCamSwitc
 
 We would like to express our sincere gratitude to all contributors and reviewers for their valuable support!
 
+## Overview
+<p align="center">
+  <img src="figs/Graph Abstract.jpg " alt="Graph Abstract" width="700"/>
+</p>
+
+## Abstract
+Recording opensurgery procedures is essen
+tial for educational and clinical evaluation purposes; how
+ever, traditional single-camera methods often face chal
+lenges such as occlusions caused by the surgeon’s head
+ and body, as well as limitations due to fixed camera angles,
+ which undermine the comprehensibility of the recorded
+ surgical content. In this study, we specifically focus on
+ open thyroidectomy and employ a multi-viewpoint camera
+ recording setup, in which six synchronized cameras cap
+ture the surgery from different angles simultaneously. We
+ develop a supervised time-series prediction framework to
+ automatically select the most informative camera views,
+ ensuring better coverage of critical steps.
+ Our model forecasts camera selections by extracting
+ and fusing visual and semantic features from thyroidec
+tomy videos using pre-trained models, followed by tempo
+ral modeling with TimeBlocks. We constructed a dataset
+ of five thyroidectomy procedures with synchronized six
+view recordings and conducted experiments. The results
+ show that our method achieves stable accuracy compared
+ with existing baselines and outperforms several main
+stream time-series prediction models in this specific sur
+gical scenario. This work provides an initial exploration of
+ multi-view camera selection for thyroidectomy, with poten
+tial value for surgical video documentation and training.
+
+
 ## 🖼️ System Overview
 
 <p align="center">
