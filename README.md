@@ -5,6 +5,10 @@ It integrates multiple architectures including **Transformer**, **VAE**, and **C
 
 ---
 
+🎉 News🎉 新闻
+
+It gives me great pleasure to inform you that our manuscript “SurgicalCamSwitch: A Deep Learning Framework for Optimal Surgical Camera Selection in Open Surgery Environments” has been accepted for publication in the IEEE Journal of Biomedical and Health Informatics (J-BHI).
+
 ## 🖼️ System Overview
 
 <p align="center">
