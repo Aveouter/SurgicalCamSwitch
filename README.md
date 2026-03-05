@@ -7,7 +7,7 @@ It integrates multiple architectures including **Transformer**, **VAE**, and **C
 
 🎉 News
 
-It gives me great pleasure to inform you that our manuscript “SurgicalCamSwitch: A Deep Learning Framework for Optimal Surgical Camera Selection in Open Surgery Environments” has been accepted for publication in the IEEE Journal of Biomedical and Health Informatics (J-BHI).
+It gives me great pleasure to inform you that our manuscript “TSP-OCS: A Time-Series Prediction for Optimal Camera Selection in Multi-Viewpoint Surgical Video Analysis” has been accepted for publication in the IEEE Journal of Biomedical and Health Informatics (J-BHI).
 
 We would like to express our sincere gratitude to all contributors and reviewers for their valuable support!
 
@@ -72,7 +72,13 @@ pip install git-filter-repo
 
 ## 📚 cite
 
-coming soon
+@article{liu2025tsp,
+  title={TSP-OCS: A Time-Series Prediction for Optimal Camera Selection in Multi-Viewpoint Surgical Video Analysis},
+  author={Liu, Xinyu and Lin, Xiaoguang and Liu, Xiang and Yang, Yong and Wang, Hongqian and Sun, Qilong},
+  journal={IEEE Journal of Biomedical and Health Informatics},
+  year={2025},
+  publisher={IEEE}
+}
 
 ---
 
