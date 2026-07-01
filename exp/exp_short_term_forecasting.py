@@ -1,9 +1,7 @@
 from data_provider.data_factory import data_provider
-from data_provider.m4 import M4Meta
 from exp.exp_basic import Exp_Basic
 from utils.tools import EarlyStopping, adjust_learning_rate, visual
 from utils.losses import mape_loss, mase_loss, smape_loss
-from utils.m4_summary import M4Summary
 import torch
 import torch.nn as nn
 from torch import optim
@@ -12,6 +10,11 @@ import time
 import warnings
 import numpy as np
 import pandas
+
+try:
+    from data_provider.m4 import M4Meta
+except ImportError:
+    M4Meta = None
 
 warnings.filterwarnings('ignore')
 
@@ -22,6 +25,8 @@ class Exp_Short_Term_Forecast(Exp_Basic):
 
     def _build_model(self):
         if self.args.data == 'm4':
+            if M4Meta is None:
+                raise ImportError("M4 support requires data_provider/m4.py, which is not included in this repository.")
             self.args.pred_len = M4Meta.horizons_map[self.args.seasonal_patterns]  # Up to M4 config
             self.args.seq_len = 2 * self.args.pred_len  # input_len = 2*pred_len
             self.args.label_len = self.args.pred_len
@@ -216,20 +221,4 @@ class Exp_Short_Term_Forecast(Exp_Basic):
         forecasts_df.to_csv(folder_path + self.args.seasonal_patterns + '_forecast.csv')
 
         print(self.args.model)
-        file_path = './m4_results/' + self.args.model + '/'
-        if 'Weekly_forecast.csv' in os.listdir(file_path) \
-                and 'Monthly_forecast.csv' in os.listdir(file_path) \
-                and 'Yearly_forecast.csv' in os.listdir(file_path) \
-                and 'Daily_forecast.csv' in os.listdir(file_path) \
-                and 'Hourly_forecast.csv' in os.listdir(file_path) \
-                and 'Quarterly_forecast.csv' in os.listdir(file_path):
-            m4_summary = M4Summary(file_path, self.args.root_path)
-            # m4_forecast.set_index(m4_winner_forecast.columns[0], inplace=True)
-            smape_results, owa_results, mape, mase = m4_summary.evaluate()
-            print('smape:', smape_results)
-            print('mape:', mape)
-            print('mase:', mase)
-            print('owa:', owa_results)
-        else:
-            print('After all 6 tasks are finished, you can calculate the averaged index')
         return

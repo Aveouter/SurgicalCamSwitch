@@ -1,7 +1,12 @@
 from data_provider.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom, Dataset_M4, PSMSegLoader,batteryloader,\
     MSLSegLoader, SMAPSegLoader, SMDSegLoader,SWATSegLoader,UEAloader,cameraloader_all,cameraloader_all_valeqtest
-from data_provider.uea import collate_fn
 from torch.utils.data import DataLoader
+
+try:
+    from data_provider.uea import collate_fn
+except ImportError:
+    def collate_fn(*args, **kwargs):
+        raise ImportError("UEA support requires data_provider/uea.py, which is not included in this repository.")
 
 data_dict = {
     'ETTh1': Dataset_ETT_hour,
@@ -23,6 +28,10 @@ data_dict = {
 
 
 def data_provider(args, flag):
+    if args.data in {'m4', 'UEA'}:
+        missing = 'm4.py' if args.data == 'm4' else 'uea.py'
+        raise ImportError(f"{args.data} support requires data_provider/{missing}, which is not included in this repository.")
+
     Data = data_dict[args.data]
     timeenc = 0 if args.embed != 'timeF' else 1
 

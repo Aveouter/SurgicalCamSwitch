@@ -1,7 +1,7 @@
 # SurgicalCamSwitch
 
 **SurgicalCamSwitch** is a deep learning–based video analysis and time-series prediction framework designed for **optimal surgical camera selection** in open surgery environments.  
-It integrates multiple architectures including **Transformer**, **VAE**, and **CNN** models to perform **multi-task learning**, **anomaly detection**, and **visual analytics** of multi-view surgical videos.
+It integrates multiple architectures including **Transformer** and **CNN** models to perform **multi-task learning**, **anomaly detection**, and **visual analytics** of multi-view surgical videos.
 
 ---
 
@@ -81,4 +81,3 @@ pip install git-filter-repo
 }
 
 ---
-
