@@ -2,8 +2,7 @@ import os
 import torch
 from models import Autoformer, Transformer, TimesNet, Nonstationary_Transformer, DLinear, FEDformer, \
     Informer, LightTS, Reformer, ETSformer, Pyraformer, PatchTST, MICN, Crossformer, FiLM, iTransformer, \
-    Koopa, TiDE, FreTS, TimeMixer, TSMixer, SegRNN, MambaSimple, Mamba, TemporalFusionTransformer, \
-    Res_BiLstm,VAE,TimeXer,TCN,Lstm
+    Koopa, FreTS, TimeMixer, SegRNN, MambaSimple, Mamba, Res_BiLstm, TimeXer, TCN, Lstm
 
 
 class Exp_Basic(object):
@@ -27,17 +26,13 @@ class Exp_Basic(object):
             'FiLM': FiLM,
             'iTransformer': iTransformer,
             'Koopa': Koopa,
-            'TiDE': TiDE,
             'FreTS': FreTS,
             'MambaSimple': MambaSimple,
             'Mamba': Mamba,
             'TimeMixer': TimeMixer,
-            'TSMixer': TSMixer,
             'SegRNN': SegRNN,
             'TimeXer' : TimeXer,
-            'TemporalFusionTransformer': TemporalFusionTransformer,
             'Res_BiLstm': Res_BiLstm,
-            'VAE':VAE,
             'TCN':TCN,
             'Lstm': Lstm
         }

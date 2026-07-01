@@ -8,12 +8,23 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from utils.timefeatures import time_features
-from data_provider.m4 import M4Dataset, M4Meta
-from data_provider.uea import subsample, interpolate_missing, Normalizer
 from sktime.datasets import load_from_tsfile_to_dataframe
 import warnings
 from utils.augmentation import run_augmentation_single
 import random
+
+try:
+    from data_provider.m4 import M4Dataset, M4Meta
+except ImportError:
+    M4Dataset = None
+    M4Meta = None
+
+try:
+    from data_provider.uea import subsample, interpolate_missing, Normalizer
+except ImportError:
+    subsample = None
+    interpolate_missing = None
+    Normalizer = None
 
 warnings.filterwarnings('ignore')
 

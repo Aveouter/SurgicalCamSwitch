@@ -16,7 +16,7 @@ from utils.augmentation import run_augmentation,run_augmentation_single
 import torch.nn.functional as F
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
-from utils.losses import mape_loss, mase_loss, smape_loss, VAELoss,ContrastiveLoss
+from utils.losses import mape_loss, mase_loss, smape_loss
 from torch.utils.tensorboard import SummaryWriter
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,20 +24,8 @@ from sklearn.metrics import roc_curve, auc
 from sklearn.preprocessing import label_binarize
 from sklearn.metrics import RocCurveDisplay
 from itertools import cycle
-import webbrowser
-import subprocess
 
 warnings.filterwarnings('ignore')
-
-def vae_loss(recon_x, x, mu, logvar):
-    recon_loss = F.mse_loss(recon_x, x, reduction='sum')
-    kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
-    return recon_loss + kl_loss
-
-def contrastive_loss(z_anchor, z_pos, z_neg, margin=1.0):
-    d_pos = F.pairwise_distance(z_anchor, z_pos)
-    d_neg = F.pairwise_distance(z_anchor, z_neg)
-    return torch.mean(F.relu(d_pos - d_neg + margin))
 
 
 class Exp_Long_Term_Forecast(Exp_Basic):
@@ -76,8 +64,7 @@ class Exp_Long_Term_Forecast(Exp_Basic):
             # weights = torch.tensor([0.266919,0.182162, 0.166005, 0.137599,0.088173,0.159142], dtype=torch.float32).to(self.device)
             # return nn.CrossEntropyLoss(weight=weights) 
             return nn.CrossEntropyLoss()
-        elif loss_name == 'saitoVAE':
-            return VAELoss()
+        raise ValueError(f"Unsupported loss function: {loss_name}")
 
     def vali(self, vali_data, vali_loader, criterion):
         total_loss = []

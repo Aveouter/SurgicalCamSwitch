@@ -1,1 +1,16 @@
-Exp_saito_vae/*.csv
+__pycache__/
+*.py[cod]
+*$py.class
+
+.DS_Store
+
+checkpoints/
+results/
+test_results/
+runs/
+m4_results/
+*.log
+result*.txt
+results*.txt
+
+data/
